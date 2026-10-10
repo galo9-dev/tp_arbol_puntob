@@ -167,7 +167,6 @@ Sin embargo, la **prueba de estabilidad** muestra que este ranking no se sostien
 
 En cada división la variable principal es distinta, y la accuracy varía entre 0,33 y 0,67 solo por cambiar qué alumnos quedan en entrenamiento y cuáles en prueba. Ninguna variable aparece de forma consistente como la más importante. Edad es la que más se repite entre las tres primeras, pero el árbol que la usa tampoco supera al modelo trivial.
 
-**Respuesta al punto 4:** el árbol entrenado le asigna mayor importancia a la asistencia y la edad. Pero como el modelo no supera a un predictor trivial y las variables importantes cambian por completo según la división de los datos, **no se puede afirmar que alguna variable sea realmente predictiva del abandono con este dataset**. Las importancias reflejan patrones al azar de la muestra de entrenamiento, no relaciones reales.
 
 ### Interpretación general
 
@@ -176,9 +175,3 @@ El modelo **no logra predecir mejor que el azar**: su accuracy en prueba (50%) e
 Para descartar que fuera un problema del modelo o de la división elegida, se probaron otras profundidades del árbol, un Random Forest y una regresión logística con validación cruzada. Todos obtuvieron resultados similares o peores, lo que indica que **las variables del dataset no muestran relación con el abandono**. Esto también se observa al comparar los promedios de cada variable entre quienes abandonaron y quienes continuaron: las diferencias son mínimas.
 
 Además, las variables "importantes" cambian notablemente al modificar una sola fila del dataset o al cambiar la división train/test, lo que confirma que el árbol no encontró patrones estables. Por lo tanto, **las predicciones sobre DatosFinal no deben considerarse confiables**.
-
-### Limitaciones
-
-- Muestra pequeña: 100 estudiantes, de los cuales solo 70 se usan para entrenar.
-- Los datos corresponden al primer cuatrimestre, mientras que la consigna plantea predecir en base al primer año.
-- Algunas carreras tienen muy pocos estudiantes (entre 6 y 15), lo que impide sacar conclusiones por carrera.
