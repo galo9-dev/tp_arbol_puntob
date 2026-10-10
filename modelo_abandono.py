@@ -9,9 +9,6 @@ Pasos:
   4. Evaluar con el conjunto de prueba
   5. Interpretar: importancia de variables, árbol y su confiabilidad (Punto 4)
   6. Predecir sobre DatosFinal (alumnos sin resultado conocido)
-
-Requisitos: pip install pandas scikit-learn matplotlib openpyxl
-Los dos .xlsx tienen que estar en la misma carpeta que este script.
 """
 
 import os
